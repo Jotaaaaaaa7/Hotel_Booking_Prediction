@@ -1,0 +1,13 @@
+.venv/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+/data/
+
+*.pdf
+.idea/
+
+outputs/
