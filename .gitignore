@@ -5,7 +5,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+/mlruns/
 /data/
+pruebas.ipynb
+modelos_cargados_info.csv
 
 *.pdf
 .idea/

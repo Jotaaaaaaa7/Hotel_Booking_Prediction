@@ -1,0 +1,496 @@
+2025-07-27 18:45:59,034 - hotel_api - INFO - Iniciando API de predicción de cancelaciones de hotel
+2025-07-27 18:45:59,035 - hotel_api - INFO - Directorio de modelos configurado: outputs
+2025-07-27 18:45:59,035 - hotel_api - DEBUG - Mapeo de nombres de modelos: {'decision': 'decision_tree', 'logistic': 'logistic_regression', 'neural': 'neural_network', 'random': 'random_forest', 'xgboost': 'xgboost'}
+2025-07-27 18:45:59,035 - hotel_api - INFO - Iniciando carga de modelos...
+2025-07-27 18:45:59,036 - hotel_api - DEBUG - Archivos de modelo encontrados: ['outputs\\decision_tree_model.joblib', 'outputs\\logistic_regression_model.joblib', 'outputs\\neural_network_model.joblib', 'outputs\\random_forest_model.joblib', 'outputs\\xgboost_model.joblib']
+2025-07-27 18:45:59,037 - hotel_api - DEBUG - Procesando archivo: outputs\decision_tree_model.joblib, nombre extraído: decision
+2025-07-27 18:45:59,037 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: decision
+2025-07-27 18:45:59,037 - hotel_api - INFO - Cargando modelo: decision desde outputs\decision_tree_model.joblib
+2025-07-27 18:45:59,037 - hotel_api - ERROR - Error al cargar el modelo outputs\decision_tree_model.joblib: 
+2025-07-27 18:45:59,057 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:45:59,057 - hotel_api - DEBUG - Procesando archivo: outputs\logistic_regression_model.joblib, nombre extraído: logistic
+2025-07-27 18:45:59,057 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: logistic
+2025-07-27 18:45:59,057 - hotel_api - INFO - Cargando modelo: logistic desde outputs\logistic_regression_model.joblib
+2025-07-27 18:45:59,058 - hotel_api - ERROR - Error al cargar el modelo outputs\logistic_regression_model.joblib: 
+2025-07-27 18:45:59,058 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:45:59,059 - hotel_api - DEBUG - Procesando archivo: outputs\neural_network_model.joblib, nombre extraído: neural
+2025-07-27 18:45:59,059 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: neural
+2025-07-27 18:45:59,059 - hotel_api - INFO - Cargando modelo: neural desde outputs\neural_network_model.joblib
+2025-07-27 18:45:59,059 - hotel_api - ERROR - Error al cargar el modelo outputs\neural_network_model.joblib: 
+2025-07-27 18:45:59,060 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:45:59,060 - hotel_api - DEBUG - Procesando archivo: outputs\random_forest_model.joblib, nombre extraído: random
+2025-07-27 18:45:59,061 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: random
+2025-07-27 18:45:59,061 - hotel_api - INFO - Cargando modelo: random desde outputs\random_forest_model.joblib
+2025-07-27 18:45:59,061 - hotel_api - ERROR - Error al cargar el modelo outputs\random_forest_model.joblib: 
+2025-07-27 18:45:59,062 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:45:59,062 - hotel_api - DEBUG - Procesando archivo: outputs\xgboost_model.joblib, nombre extraído: xgboost
+2025-07-27 18:45:59,063 - hotel_api - DEBUG - Nombre en mapeo encontrado: xgboost -> xgboost
+2025-07-27 18:45:59,063 - hotel_api - INFO - Cargando modelo: xgboost desde outputs\xgboost_model.joblib
+2025-07-27 18:45:59,063 - hotel_api - ERROR - Error al cargar el modelo outputs\xgboost_model.joblib: 
+2025-07-27 18:45:59,063 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:45:59,064 - hotel_api - CRITICAL - No se encontraron modelos en outputs
+2025-07-27 18:49:05,647 - hotel_api - INFO - Iniciando API de predicción de cancelaciones de hotel
+2025-07-27 18:49:05,648 - hotel_api - INFO - Directorio de modelos configurado: outputs
+2025-07-27 18:49:05,648 - hotel_api - DEBUG - Mapeo de nombres de modelos: {'decision': 'decision_tree', 'logistic': 'logistic_regression', 'neural': 'neural_network', 'random': 'random_forest', 'xgboost': 'xgboost'}
+2025-07-27 18:49:05,649 - hotel_api - INFO - Iniciando carga de modelos...
+2025-07-27 18:49:05,649 - hotel_api - DEBUG - Archivos de modelo encontrados: ['outputs\\decision_tree_model.joblib', 'outputs\\logistic_regression_model.joblib', 'outputs\\neural_network_model.joblib', 'outputs\\random_forest_model.joblib', 'outputs\\xgboost_model.joblib']
+2025-07-27 18:49:05,650 - hotel_api - DEBUG - Procesando archivo: outputs\decision_tree_model.joblib, nombre extraído: decision
+2025-07-27 18:49:05,650 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: decision
+2025-07-27 18:49:05,650 - hotel_api - INFO - Cargando modelo: decision desde outputs\decision_tree_model.joblib
+2025-07-27 18:49:05,650 - hotel_api - ERROR - Error al cargar el modelo outputs\decision_tree_model.joblib: 
+2025-07-27 18:49:05,652 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:05,653 - hotel_api - DEBUG - Procesando archivo: outputs\logistic_regression_model.joblib, nombre extraído: logistic
+2025-07-27 18:49:05,653 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: logistic
+2025-07-27 18:49:05,653 - hotel_api - INFO - Cargando modelo: logistic desde outputs\logistic_regression_model.joblib
+2025-07-27 18:49:05,654 - hotel_api - ERROR - Error al cargar el modelo outputs\logistic_regression_model.joblib: 
+2025-07-27 18:49:05,654 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:05,654 - hotel_api - DEBUG - Procesando archivo: outputs\neural_network_model.joblib, nombre extraído: neural
+2025-07-27 18:49:05,654 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: neural
+2025-07-27 18:49:05,654 - hotel_api - INFO - Cargando modelo: neural desde outputs\neural_network_model.joblib
+2025-07-27 18:49:05,655 - hotel_api - ERROR - Error al cargar el modelo outputs\neural_network_model.joblib: 
+2025-07-27 18:49:05,655 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:05,655 - hotel_api - DEBUG - Procesando archivo: outputs\random_forest_model.joblib, nombre extraído: random
+2025-07-27 18:49:05,655 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: random
+2025-07-27 18:49:05,656 - hotel_api - INFO - Cargando modelo: random desde outputs\random_forest_model.joblib
+2025-07-27 18:49:05,656 - hotel_api - ERROR - Error al cargar el modelo outputs\random_forest_model.joblib: 
+2025-07-27 18:49:05,656 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:05,657 - hotel_api - DEBUG - Procesando archivo: outputs\xgboost_model.joblib, nombre extraído: xgboost
+2025-07-27 18:49:05,658 - hotel_api - DEBUG - Nombre en mapeo encontrado: xgboost -> xgboost
+2025-07-27 18:49:05,658 - hotel_api - INFO - Cargando modelo: xgboost desde outputs\xgboost_model.joblib
+2025-07-27 18:49:05,659 - hotel_api - ERROR - Error al cargar el modelo outputs\xgboost_model.joblib: 
+2025-07-27 18:49:05,659 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:05,660 - hotel_api - CRITICAL - No se encontraron modelos en outputs
+2025-07-27 18:49:06,172 - hotel_api - INFO - Iniciando API de predicción de cancelaciones de hotel
+2025-07-27 18:49:06,172 - hotel_api - INFO - Directorio de modelos configurado: outputs
+2025-07-27 18:49:06,172 - hotel_api - DEBUG - Mapeo de nombres de modelos: {'decision': 'decision_tree', 'logistic': 'logistic_regression', 'neural': 'neural_network', 'random': 'random_forest', 'xgboost': 'xgboost'}
+2025-07-27 18:49:06,173 - hotel_api - INFO - Iniciando carga de modelos...
+2025-07-27 18:49:06,173 - hotel_api - DEBUG - Archivos de modelo encontrados: ['outputs\\decision_tree_model.joblib', 'outputs\\logistic_regression_model.joblib', 'outputs\\neural_network_model.joblib', 'outputs\\random_forest_model.joblib', 'outputs\\xgboost_model.joblib']
+2025-07-27 18:49:06,173 - hotel_api - DEBUG - Procesando archivo: outputs\decision_tree_model.joblib, nombre extraído: decision
+2025-07-27 18:49:06,173 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: decision
+2025-07-27 18:49:06,173 - hotel_api - INFO - Cargando modelo: decision desde outputs\decision_tree_model.joblib
+2025-07-27 18:49:06,174 - hotel_api - ERROR - Error al cargar el modelo outputs\decision_tree_model.joblib: 
+2025-07-27 18:49:06,176 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:06,176 - hotel_api - DEBUG - Procesando archivo: outputs\logistic_regression_model.joblib, nombre extraído: logistic
+2025-07-27 18:49:06,176 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: logistic
+2025-07-27 18:49:06,176 - hotel_api - INFO - Cargando modelo: logistic desde outputs\logistic_regression_model.joblib
+2025-07-27 18:49:06,177 - hotel_api - ERROR - Error al cargar el modelo outputs\logistic_regression_model.joblib: 
+2025-07-27 18:49:06,177 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:06,177 - hotel_api - DEBUG - Procesando archivo: outputs\neural_network_model.joblib, nombre extraído: neural
+2025-07-27 18:49:06,177 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: neural
+2025-07-27 18:49:06,178 - hotel_api - INFO - Cargando modelo: neural desde outputs\neural_network_model.joblib
+2025-07-27 18:49:06,178 - hotel_api - ERROR - Error al cargar el modelo outputs\neural_network_model.joblib: 
+2025-07-27 18:49:06,178 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:06,179 - hotel_api - DEBUG - Procesando archivo: outputs\random_forest_model.joblib, nombre extraído: random
+2025-07-27 18:49:06,179 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: random
+2025-07-27 18:49:06,179 - hotel_api - INFO - Cargando modelo: random desde outputs\random_forest_model.joblib
+2025-07-27 18:49:06,180 - hotel_api - ERROR - Error al cargar el modelo outputs\random_forest_model.joblib: 
+2025-07-27 18:49:06,180 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:06,180 - hotel_api - DEBUG - Procesando archivo: outputs\xgboost_model.joblib, nombre extraído: xgboost
+2025-07-27 18:49:06,181 - hotel_api - DEBUG - Nombre en mapeo encontrado: xgboost -> xgboost
+2025-07-27 18:49:06,181 - hotel_api - INFO - Cargando modelo: xgboost desde outputs\xgboost_model.joblib
+2025-07-27 18:49:06,181 - hotel_api - ERROR - Error al cargar el modelo outputs\xgboost_model.joblib: 
+2025-07-27 18:49:06,181 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 70, in <module>
+    model = joblib.load(model_path)
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+
+2025-07-27 18:49:06,182 - hotel_api - CRITICAL - No se encontraron modelos en outputs
+2025-07-27 18:59:16,468 - hotel_api - INFO - Iniciando API de predicción de cancelaciones de hotel
+2025-07-27 18:59:16,469 - hotel_api - INFO - Directorio de modelos configurado: outputs
+2025-07-27 18:59:16,469 - hotel_api - DEBUG - Mapeo de nombres de modelos: {'decision': 'decision_tree', 'logistic': 'logistic_regression', 'neural': 'neural_network', 'random': 'random_forest', 'xgboost': 'xgboost'}
+2025-07-27 18:59:16,469 - hotel_api - INFO - Iniciando carga de modelos...
+2025-07-27 18:59:16,469 - hotel_api - DEBUG - Archivos de modelo encontrados: ['outputs\\decision_tree_model.joblib', 'outputs\\logistic_regression_model.joblib', 'outputs\\neural_network_model.joblib', 'outputs\\random_forest_model.joblib', 'outputs\\xgboost_model.joblib']
+2025-07-27 18:59:16,470 - hotel_api - DEBUG - Procesando archivo: outputs\decision_tree_model.joblib, nombre extraído: decision
+2025-07-27 18:59:16,470 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: decision
+2025-07-27 18:59:16,470 - hotel_api - INFO - Cargando modelo: decision desde outputs\decision_tree_model.joblib
+2025-07-27 18:59:16,482 - hotel_api - INFO - Modelo decision cargado correctamente
+2025-07-27 18:59:16,482 - hotel_api - DEBUG - Tipo de modelo decision: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 18:59:16,483 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 18:59:16,483 - hotel_api - ERROR - Error al cargar el modelo outputs\decision_tree_model.joblib: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+2025-07-27 18:59:16,485 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 81, in <module>
+    model_features[api_name] = model.get_feature_names_out()
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\sklearn\pipeline.py", line 1266, in get_feature_names_out
+    raise AttributeError(
+AttributeError: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+
+2025-07-27 18:59:16,486 - hotel_api - DEBUG - Procesando archivo: outputs\logistic_regression_model.joblib, nombre extraído: logistic
+2025-07-27 18:59:16,486 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: logistic
+2025-07-27 18:59:16,486 - hotel_api - INFO - Cargando modelo: logistic desde outputs\logistic_regression_model.joblib
+2025-07-27 18:59:16,489 - hotel_api - INFO - Modelo logistic cargado correctamente
+2025-07-27 18:59:16,489 - hotel_api - DEBUG - Tipo de modelo logistic: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 18:59:16,489 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 18:59:16,489 - hotel_api - ERROR - Error al cargar el modelo outputs\logistic_regression_model.joblib: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+2025-07-27 18:59:16,490 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 81, in <module>
+    model_features[api_name] = model.get_feature_names_out()
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\sklearn\pipeline.py", line 1266, in get_feature_names_out
+    raise AttributeError(
+AttributeError: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+
+2025-07-27 18:59:16,490 - hotel_api - DEBUG - Procesando archivo: outputs\neural_network_model.joblib, nombre extraído: neural
+2025-07-27 18:59:16,490 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: neural
+2025-07-27 18:59:16,490 - hotel_api - INFO - Cargando modelo: neural desde outputs\neural_network_model.joblib
+2025-07-27 18:59:18,391 - tensorflow - DEBUG - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2025-07-27 18:59:18,894 - h5py._conv - DEBUG - Creating converter from 7 to 5
+2025-07-27 18:59:18,894 - h5py._conv - DEBUG - Creating converter from 5 to 7
+2025-07-27 18:59:18,894 - h5py._conv - DEBUG - Creating converter from 7 to 5
+2025-07-27 18:59:18,894 - h5py._conv - DEBUG - Creating converter from 5 to 7
+2025-07-27 18:59:20,215 - matplotlib - DEBUG - matplotlib data path: C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\matplotlib\mpl-data
+2025-07-27 18:59:20,221 - matplotlib - DEBUG - CONFIGDIR=C:\Users\usuario\.matplotlib
+2025-07-27 18:59:20,223 - matplotlib - DEBUG - interactive is False
+2025-07-27 18:59:20,223 - matplotlib - DEBUG - platform is win32
+2025-07-27 18:59:20,285 - matplotlib - DEBUG - CACHEDIR=C:\Users\usuario\.matplotlib
+2025-07-27 18:59:20,290 - matplotlib.font_manager - DEBUG - Using fontManager instance from C:\Users\usuario\.matplotlib\fontlist-v390.json
+2025-07-27 18:59:21,245 - hotel_api - INFO - Modelo neural cargado correctamente
+2025-07-27 18:59:21,245 - hotel_api - DEBUG - Tipo de modelo neural: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 18:59:21,245 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 18:59:21,246 - hotel_api - ERROR - Error al cargar el modelo outputs\neural_network_model.joblib: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+2025-07-27 18:59:21,246 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 81, in <module>
+    model_features[api_name] = model.get_feature_names_out()
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\sklearn\pipeline.py", line 1266, in get_feature_names_out
+    raise AttributeError(
+AttributeError: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+
+2025-07-27 18:59:21,247 - hotel_api - DEBUG - Procesando archivo: outputs\random_forest_model.joblib, nombre extraído: random
+2025-07-27 18:59:21,247 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: random
+2025-07-27 18:59:21,247 - hotel_api - INFO - Cargando modelo: random desde outputs\random_forest_model.joblib
+2025-07-27 18:59:21,457 - hotel_api - INFO - Modelo random cargado correctamente
+2025-07-27 18:59:21,457 - hotel_api - DEBUG - Tipo de modelo random: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 18:59:21,457 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 18:59:21,458 - hotel_api - ERROR - Error al cargar el modelo outputs\random_forest_model.joblib: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+2025-07-27 18:59:21,458 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 81, in <module>
+    model_features[api_name] = model.get_feature_names_out()
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\sklearn\pipeline.py", line 1266, in get_feature_names_out
+    raise AttributeError(
+AttributeError: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+
+2025-07-27 18:59:21,458 - hotel_api - DEBUG - Procesando archivo: outputs\xgboost_model.joblib, nombre extraído: xgboost
+2025-07-27 18:59:21,459 - hotel_api - DEBUG - Nombre en mapeo encontrado: xgboost -> xgboost
+2025-07-27 18:59:21,459 - hotel_api - INFO - Cargando modelo: xgboost desde outputs\xgboost_model.joblib
+2025-07-27 18:59:21,545 - hotel_api - INFO - Modelo xgboost cargado correctamente
+2025-07-27 18:59:21,545 - hotel_api - DEBUG - Tipo de modelo xgboost: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 18:59:21,546 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 18:59:21,547 - hotel_api - ERROR - Error al cargar el modelo outputs\xgboost_model.joblib: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+2025-07-27 18:59:21,547 - hotel_api - ERROR - Traceback (most recent call last):
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\api.py", line 81, in <module>
+    model_features[api_name] = model.get_feature_names_out()
+  File "C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\sklearn\pipeline.py", line 1266, in get_feature_names_out
+    raise AttributeError(
+AttributeError: Estimator clf does not provide get_feature_names_out. Did you mean to call pipeline[:-1].get_feature_names_out()?
+
+2025-07-27 18:59:21,547 - hotel_api - INFO - Total de modelos cargados: 5
+2025-07-27 18:59:21,548 - hotel_api - INFO - Modelos disponibles: ['decision', 'logistic', 'neural', 'random', 'xgboost']
+2025-07-27 19:02:19,593 - hotel_api - INFO - Iniciando API de predicción de cancelaciones de hotel
+2025-07-27 19:02:19,594 - hotel_api - INFO - Directorio de modelos configurado: outputs
+2025-07-27 19:02:19,594 - hotel_api - DEBUG - Mapeo de nombres de modelos: {'decision': 'decision_tree', 'logistic': 'logistic_regression', 'neural': 'neural_network', 'random': 'random_forest', 'xgboost': 'xgboost'}
+2025-07-27 19:02:19,594 - hotel_api - INFO - Iniciando carga de modelos...
+2025-07-27 19:02:19,595 - hotel_api - DEBUG - Archivos de modelo encontrados: ['outputs\\decision_tree_model.joblib', 'outputs\\logistic_regression_model.joblib', 'outputs\\neural_network_model.joblib', 'outputs\\random_forest_model.joblib', 'outputs\\xgboost_model.joblib']
+2025-07-27 19:02:19,595 - hotel_api - DEBUG - Procesando archivo: outputs\decision_tree_model.joblib, nombre extraído: decision
+2025-07-27 19:02:19,595 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: decision
+2025-07-27 19:02:19,595 - hotel_api - INFO - Cargando modelo: decision desde outputs\decision_tree_model.joblib
+2025-07-27 19:02:19,606 - hotel_api - INFO - Modelo decision cargado correctamente
+2025-07-27 19:02:19,606 - hotel_api - DEBUG - Tipo de modelo decision: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:02:19,606 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:02:19,606 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:02:19,607 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:02:19,607 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:02:19,607 - hotel_api - DEBUG - Procesando archivo: outputs\logistic_regression_model.joblib, nombre extraído: logistic
+2025-07-27 19:02:19,607 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: logistic
+2025-07-27 19:02:19,608 - hotel_api - INFO - Cargando modelo: logistic desde outputs\logistic_regression_model.joblib
+2025-07-27 19:02:19,611 - hotel_api - INFO - Modelo logistic cargado correctamente
+2025-07-27 19:02:19,611 - hotel_api - DEBUG - Tipo de modelo logistic: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:02:19,611 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:02:19,611 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:02:19,612 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:02:19,612 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:02:19,612 - hotel_api - DEBUG - Procesando archivo: outputs\neural_network_model.joblib, nombre extraído: neural
+2025-07-27 19:02:19,612 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: neural
+2025-07-27 19:02:19,613 - hotel_api - INFO - Cargando modelo: neural desde outputs\neural_network_model.joblib
+2025-07-27 19:02:20,676 - hotel_api - INFO - Iniciando API de predicción de cancelaciones de hotel
+2025-07-27 19:02:20,676 - hotel_api - INFO - Directorio de modelos configurado: outputs
+2025-07-27 19:02:20,677 - hotel_api - DEBUG - Mapeo de nombres de modelos: {'decision': 'decision_tree', 'logistic': 'logistic_regression', 'neural': 'neural_network', 'random': 'random_forest', 'xgboost': 'xgboost'}
+2025-07-27 19:02:20,677 - hotel_api - INFO - Iniciando carga de modelos...
+2025-07-27 19:02:20,677 - hotel_api - DEBUG - Archivos de modelo encontrados: ['outputs\\decision_tree_model.joblib', 'outputs\\logistic_regression_model.joblib', 'outputs\\neural_network_model.joblib', 'outputs\\random_forest_model.joblib', 'outputs\\xgboost_model.joblib']
+2025-07-27 19:02:20,678 - hotel_api - DEBUG - Procesando archivo: outputs\decision_tree_model.joblib, nombre extraído: decision
+2025-07-27 19:02:20,678 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: decision
+2025-07-27 19:02:20,678 - hotel_api - INFO - Cargando modelo: decision desde outputs\decision_tree_model.joblib
+2025-07-27 19:02:20,693 - hotel_api - INFO - Modelo decision cargado correctamente
+2025-07-27 19:02:20,693 - hotel_api - DEBUG - Tipo de modelo decision: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:02:20,693 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:02:20,693 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:02:20,695 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:02:20,695 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:02:20,695 - hotel_api - DEBUG - Procesando archivo: outputs\logistic_regression_model.joblib, nombre extraído: logistic
+2025-07-27 19:02:20,695 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: logistic
+2025-07-27 19:02:20,695 - hotel_api - INFO - Cargando modelo: logistic desde outputs\logistic_regression_model.joblib
+2025-07-27 19:02:20,698 - hotel_api - INFO - Modelo logistic cargado correctamente
+2025-07-27 19:02:20,699 - hotel_api - DEBUG - Tipo de modelo logistic: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:02:20,699 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:02:20,699 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:02:20,700 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:02:20,700 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:02:20,701 - hotel_api - DEBUG - Procesando archivo: outputs\neural_network_model.joblib, nombre extraído: neural
+2025-07-27 19:02:20,701 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: neural
+2025-07-27 19:02:20,701 - hotel_api - INFO - Cargando modelo: neural desde outputs\neural_network_model.joblib
+2025-07-27 19:02:21,394 - tensorflow - DEBUG - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2025-07-27 19:02:22,266 - tensorflow - DEBUG - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2025-07-27 19:02:22,559 - h5py._conv - DEBUG - Creating converter from 7 to 5
+2025-07-27 19:02:22,560 - h5py._conv - DEBUG - Creating converter from 5 to 7
+2025-07-27 19:02:22,560 - h5py._conv - DEBUG - Creating converter from 7 to 5
+2025-07-27 19:02:22,560 - h5py._conv - DEBUG - Creating converter from 5 to 7
+2025-07-27 19:02:23,345 - matplotlib - DEBUG - matplotlib data path: C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\matplotlib\mpl-data
+2025-07-27 19:02:23,350 - matplotlib - DEBUG - CONFIGDIR=C:\Users\usuario\.matplotlib
+2025-07-27 19:02:23,352 - matplotlib - DEBUG - interactive is False
+2025-07-27 19:02:23,352 - matplotlib - DEBUG - platform is win32
+2025-07-27 19:02:23,417 - matplotlib - DEBUG - CACHEDIR=C:\Users\usuario\.matplotlib
+2025-07-27 19:02:23,422 - matplotlib.font_manager - DEBUG - Using fontManager instance from C:\Users\usuario\.matplotlib\fontlist-v390.json
+2025-07-27 19:02:24,234 - hotel_api - INFO - Modelo neural cargado correctamente
+2025-07-27 19:02:24,234 - hotel_api - DEBUG - Tipo de modelo neural: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:02:24,234 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:02:24,234 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:02:24,235 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:02:24,235 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:02:24,235 - hotel_api - DEBUG - Procesando archivo: outputs\random_forest_model.joblib, nombre extraído: random
+2025-07-27 19:02:24,235 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: random
+2025-07-27 19:02:24,236 - hotel_api - INFO - Cargando modelo: random desde outputs\random_forest_model.joblib
+2025-07-27 19:02:24,456 - hotel_api - INFO - Modelo random cargado correctamente
+2025-07-27 19:02:24,457 - hotel_api - DEBUG - Tipo de modelo random: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:02:24,457 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:02:24,457 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:02:24,458 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:02:24,458 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:02:24,458 - hotel_api - DEBUG - Procesando archivo: outputs\xgboost_model.joblib, nombre extraído: xgboost
+2025-07-27 19:02:24,458 - hotel_api - DEBUG - Nombre en mapeo encontrado: xgboost -> xgboost
+2025-07-27 19:02:24,458 - hotel_api - INFO - Cargando modelo: xgboost desde outputs\xgboost_model.joblib
+2025-07-27 19:02:24,550 - hotel_api - INFO - Modelo xgboost cargado correctamente
+2025-07-27 19:02:24,550 - hotel_api - DEBUG - Tipo de modelo xgboost: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:02:24,550 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:02:24,550 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:02:24,551 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:02:24,552 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:02:24,552 - hotel_api - INFO - Total de modelos cargados: 5
+2025-07-27 19:02:24,552 - hotel_api - INFO - Modelos disponibles: ['decision', 'logistic', 'neural', 'random', 'xgboost']
+2025-07-27 19:03:36,184 - hotel_api - INFO - Iniciando API de predicción de cancelaciones de hotel
+2025-07-27 19:03:36,185 - hotel_api - INFO - Directorio de modelos configurado: outputs
+2025-07-27 19:03:36,185 - hotel_api - DEBUG - Mapeo de nombres de modelos: {'decision': 'decision_tree', 'logistic': 'logistic_regression', 'neural': 'neural_network', 'random': 'random_forest', 'xgboost': 'xgboost'}
+2025-07-27 19:03:36,185 - hotel_api - INFO - Iniciando carga de modelos...
+2025-07-27 19:03:36,186 - hotel_api - DEBUG - Archivos de modelo encontrados: ['outputs\\decision_tree_model.joblib', 'outputs\\logistic_regression_model.joblib', 'outputs\\neural_network_model.joblib', 'outputs\\random_forest_model.joblib', 'outputs\\xgboost_model.joblib']
+2025-07-27 19:03:36,186 - hotel_api - DEBUG - Procesando archivo: outputs\decision_tree_model.joblib, nombre extraído: decision
+2025-07-27 19:03:36,187 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: decision
+2025-07-27 19:03:36,187 - hotel_api - INFO - Cargando modelo: decision desde outputs\decision_tree_model.joblib
+2025-07-27 19:03:36,196 - hotel_api - INFO - Modelo decision cargado correctamente
+2025-07-27 19:03:36,197 - hotel_api - DEBUG - Tipo de modelo decision: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:03:36,197 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:03:36,197 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:03:36,198 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:03:36,198 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:03:36,198 - hotel_api - DEBUG - Procesando archivo: outputs\logistic_regression_model.joblib, nombre extraído: logistic
+2025-07-27 19:03:36,198 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: logistic
+2025-07-27 19:03:36,198 - hotel_api - INFO - Cargando modelo: logistic desde outputs\logistic_regression_model.joblib
+2025-07-27 19:03:36,200 - hotel_api - INFO - Modelo logistic cargado correctamente
+2025-07-27 19:03:36,200 - hotel_api - DEBUG - Tipo de modelo logistic: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:03:36,200 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:03:36,200 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:03:36,201 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:03:36,201 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:03:36,201 - hotel_api - DEBUG - Procesando archivo: outputs\neural_network_model.joblib, nombre extraído: neural
+2025-07-27 19:03:36,201 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: neural
+2025-07-27 19:03:36,201 - hotel_api - INFO - Cargando modelo: neural desde outputs\neural_network_model.joblib
+2025-07-27 19:03:37,487 - tensorflow - DEBUG - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2025-07-27 19:03:37,793 - h5py._conv - DEBUG - Creating converter from 7 to 5
+2025-07-27 19:03:37,793 - h5py._conv - DEBUG - Creating converter from 5 to 7
+2025-07-27 19:03:37,793 - h5py._conv - DEBUG - Creating converter from 7 to 5
+2025-07-27 19:03:37,793 - h5py._conv - DEBUG - Creating converter from 5 to 7
+2025-07-27 19:03:38,629 - matplotlib - DEBUG - matplotlib data path: C:\Users\usuario\Desktop\MASTER_Pontia\5. MACHINE_AND_DEEP_LEARNING\Entrega final\.venv\lib\site-packages\matplotlib\mpl-data
+2025-07-27 19:03:38,637 - matplotlib - DEBUG - CONFIGDIR=C:\Users\usuario\.matplotlib
+2025-07-27 19:03:38,639 - matplotlib - DEBUG - interactive is False
+2025-07-27 19:03:38,639 - matplotlib - DEBUG - platform is win32
+2025-07-27 19:03:38,697 - matplotlib - DEBUG - CACHEDIR=C:\Users\usuario\.matplotlib
+2025-07-27 19:03:38,701 - matplotlib.font_manager - DEBUG - Using fontManager instance from C:\Users\usuario\.matplotlib\fontlist-v390.json
+2025-07-27 19:03:39,491 - hotel_api - INFO - Modelo neural cargado correctamente
+2025-07-27 19:03:39,492 - hotel_api - DEBUG - Tipo de modelo neural: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:03:39,492 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:03:39,492 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:03:39,493 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:03:39,493 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:03:39,493 - hotel_api - DEBUG - Procesando archivo: outputs\random_forest_model.joblib, nombre extraído: random
+2025-07-27 19:03:39,493 - hotel_api - DEBUG - Nombre no encontrado en mapeo, usando original: random
+2025-07-27 19:03:39,493 - hotel_api - INFO - Cargando modelo: random desde outputs\random_forest_model.joblib
+2025-07-27 19:03:39,715 - hotel_api - INFO - Modelo random cargado correctamente
+2025-07-27 19:03:39,715 - hotel_api - DEBUG - Tipo de modelo random: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:03:39,715 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:03:39,716 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:03:39,716 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:03:39,717 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:03:39,717 - hotel_api - DEBUG - Procesando archivo: outputs\xgboost_model.joblib, nombre extraído: xgboost
+2025-07-27 19:03:39,717 - hotel_api - DEBUG - Nombre en mapeo encontrado: xgboost -> xgboost
+2025-07-27 19:03:39,717 - hotel_api - INFO - Cargando modelo: xgboost desde outputs\xgboost_model.joblib
+2025-07-27 19:03:39,817 - hotel_api - INFO - Modelo xgboost cargado correctamente
+2025-07-27 19:03:39,817 - hotel_api - DEBUG - Tipo de modelo xgboost: <class 'sklearn.pipeline.Pipeline'>
+2025-07-27 19:03:39,818 - hotel_api - DEBUG - Atributos disponibles: ['steps', 'transform_input', 'memory', 'verbose']
+2025-07-27 19:03:39,818 - hotel_api - DEBUG - Extrayendo características con pipeline[:-1].get_feature_names_out()
+2025-07-27 19:03:39,819 - hotel_api - INFO - Características extraídas del preprocesador: 238 columnas
+2025-07-27 19:03:39,819 - hotel_api - DEBUG - Primeras 5 características: ['num__adr' 'num__adults' 'num__agent' 'num__arrival_date_day_of_month'
+ 'num__arrival_date_week_number']
+2025-07-27 19:03:39,819 - hotel_api - INFO - Total de modelos cargados: 5
+2025-07-27 19:03:39,820 - hotel_api - INFO - Modelos disponibles: ['decision', 'logistic', 'neural', 'random', 'xgboost']

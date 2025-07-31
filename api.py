@@ -1,60 +1,34 @@
-# api.py (versión corregida)
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import joblib
-import pandas as pd
-import numpy as np
 from pathlib import Path
-from typing import Dict, Any, List, Optional
-from preprocessing import clean_dataset  # Importar la función de limpieza
+from typing import Dict, Optional, Any
 
-# Crear la aplicación FastAPI
+import joblib
+import numpy as np
+import pandas as pd
+from fastapi import FastAPI, HTTPException, Query
+from pydantic import BaseModel
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
+logger = logging.getLogger("hotel_api")
+
 app = FastAPI(
-    title="API de Predicción de Cancelaciones de Hotel",
-    description="API para predecir si una reserva será cancelada",
-    version="1.0"
+    title="Hotel Cancellation Predictor",
+    version="1.0.0",
+    description="API basada en los modelos de los notebooks.",
 )
 
-# Ruta a los modelos y mapeo de nombres
-MODELS_DIR = Path("outputs")
-MODEL_NAME_MAPPING = {
-    "decision": "decision_tree",
-    "logistic": "logistic_regression",
-    "neural": "neural_network",
-    "random": "random_forest",
-    "xgboost": "xgboost"
+MODEL_DIR = Path("outputs")
+MODEL_MAP = {
+    "logistic_regression": MODEL_DIR / "logistic_regression_model.joblib",
+    "decision_tree":       MODEL_DIR / "decision_tree_model.joblib",
+    "random_forest":       MODEL_DIR / "random_forest_model.joblib",
+    "xgboost":             MODEL_DIR / "xgboost_model.joblib",
+    "neural_network":      MODEL_DIR / "neural_network_model.joblib",
 }
 
-# Cargar los modelos y guardar sus características esperadas
-models = {}
-model_features = {}
-
-for model_path in MODELS_DIR.glob("*_model.joblib"):
-    original_name = model_path.stem.split("_")[0]
-    # Usar el nombre correcto según el mapeo
-    if original_name in MODEL_NAME_MAPPING.values():
-        # Encontrar el nombre corto para la API
-        api_name = [k for k, v in MODEL_NAME_MAPPING.items() if v == original_name][0]
-    else:
-        api_name = original_name
-
-    print(f"Cargando modelo: {api_name} desde {model_path}")
-    model = joblib.load(model_path)
-    models[api_name] = model
-
-    # Guardar las características que espera el modelo
-    if hasattr(model, 'get_feature_names_out'):
-        model_features[api_name] = model.get_feature_names_out()
-    elif hasattr(model, 'feature_names_in_'):
-        model_features[api_name] = model.feature_names_in_
-    elif hasattr(model, 'steps') and hasattr(model.steps[0][1], 'get_feature_names_out'):
-        model_features[api_name] = model.steps[0][1].get_feature_names_out()
-
-if not models:
-    raise RuntimeError(f"No se encontraron modelos en {MODELS_DIR}")
+models: Dict[str, object] = {n: joblib.load(p) for n, p in MODEL_MAP.items() if p.exists()}
 
 class BookingData(BaseModel):
-    # Mantener todas las columnas posibles, incluyendo company
     hotel: Optional[str] = None
     lead_time: Optional[int] = None
     arrival_date_year: Optional[int] = None
@@ -78,112 +52,82 @@ class BookingData(BaseModel):
     booking_changes: Optional[int] = None
     deposit_type: Optional[str] = None
     agent: Optional[float] = None
-    company: Optional[float] = None  # Descomentar para incluirlo
+    company: Optional[float] = None
     days_in_waiting_list: Optional[int] = None
     customer_type: Optional[str] = None
     adr: Optional[float] = None
     required_car_parking_spaces: Optional[int] = None
     total_of_special_requests: Optional[int] = None
 
-def preprocess_data(data: pd.DataFrame) -> pd.DataFrame:
-    """Aplica el mismo preprocesamiento que se usó durante el entrenamiento"""
-    # Aplicar la limpieza básica del dataset
-    data_processed = clean_dataset(data.copy())
 
-    # Asegurar que todos los tipos de datos sean correctos
-    numeric_cols = ['lead_time', 'arrival_date_year', 'adults', 'children', 'babies',
-                   'is_repeated_guest', 'previous_cancellations', 'previous_bookings_not_canceled',
-                   'booking_changes', 'days_in_waiting_list', 'adr',
-                   'required_car_parking_spaces', 'total_of_special_requests']
-
-    for col in numeric_cols:
-        if col in data_processed.columns:
-            data_processed[col] = pd.to_numeric(data_processed[col], errors='coerce').fillna(0)
-
-    return data_processed
-
-@app.get("/")
-def read_root():
-    return {"message": "API de predicción de cancelaciones de hotel",
-            "modelos_disponibles": list(models.keys())}
-
-@app.post("/predict/{model_name}")
-def predict(model_name: str, booking: BookingData):
-    """Predice si una reserva será cancelada usando el modelo especificado."""
-    if model_name not in models:
-        raise HTTPException(status_code=404, detail=f"Modelo '{model_name}' no encontrado")
-
-    # Convertir los datos a DataFrame y aplicar el preprocesamiento completo
-    data = pd.DataFrame([booking.model_dump()])
-    data_processed = preprocess_data(data)
-
-    model = models[model_name]
+def _align(model, df: pd.DataFrame) -> pd.DataFrame:
     try:
-        # Manejar todos los modelos de manera consistente
-        prediction = model.predict(data_processed)[0]
+        prep = model.named_steps["prep"]
+        expected = list(prep.feature_names_in_)
+        return df.reindex(columns=expected, fill_value=np.nan)
+    except Exception:
+        return df
 
-        # Obtener probabilidades cuando sea posible
-        if hasattr(model, "predict_proba"):
-            probability = model.predict_proba(data_processed)[0][1]
-        elif model_name == "neural":
-            # Para el modelo neural, extraer la probabilidad directamente
-            raw_prediction = model.predict(data_processed)
-            if hasattr(raw_prediction, "numpy"):
-                probability = float(raw_prediction.numpy().flatten()[0])
-            else:
-                probability = float(raw_prediction.flatten()[0])
-        else:
-            # Si no hay método de probabilidad
-            probability = float(prediction)
 
-        return {
-            "model": model_name,
-            "prediction": int(prediction),
-            "will_cancel": bool(prediction == 1),
-            "probability": float(probability)
-        }
-    except Exception as e:
-        error_msg = f"Error al predecir con {model_name}: {str(e)}"
-        print(error_msg)
-        print(f"Forma de los datos: {data_processed.shape}")
-        print(f"Columnas: {data_processed.columns.tolist()}")
-        raise HTTPException(status_code=500, detail=error_msg)
+def _proba(model, df: pd.DataFrame) -> float:
+    p = model.predict_proba(df)
+
+    # Primero verificar la dimensionalidad del array
+    if p.ndim == 1:
+        # Si es unidimensional, simplemente devolvemos el primer valor
+        return float(p[0])
+
+    # Si es bidimensional, intentamos obtener la probabilidad de la clase positiva
+    if hasattr(model, "classes_") and len(model.classes_) > 1:
+        # Obtener el índice de la clase positiva (generalmente 1)
+        pos_idx = np.where(model.classes_ == 1)[0][0]
+        return float(p[0, pos_idx])
+    else:
+        # Si no podemos determinar la clase positiva, asumimos que es la columna 1
+        return float(p[0, 1])
+
 
 @app.post("/predict_all")
-def predict_all(booking: BookingData):
-    """Predice usando todos los modelos disponibles."""
-    results = {}
+def predict_all(
+    data: BookingData,
+    threshold: float = Query(0.5, ge=0.0, le=1.0, description="Umbral de decisión"),
+) -> Dict[str, Any]:
+    if not models:
+        raise HTTPException(503, "No hay modelos cargados.")
 
-    # Preprocesamiento de los datos una sola vez
-    data = pd.DataFrame([booking.model_dump()])
-    data_processed = preprocess_data(data)
-
+    raw = pd.DataFrame([data.model_dump()])
+    out = {}
     for name, model in models.items():
         try:
-            # Predicción consistente para todos los modelos
-            prediction = model.predict(data_processed)[0]
-
-            # Manejo de probabilidades
-            if hasattr(model, "predict_proba"):
-                probability = model.predict_proba(data_processed)[0][1]
-            elif name == "neural":
-                # Para el modelo neural
-                raw_prediction = model.predict(data_processed)
-                if hasattr(raw_prediction, "numpy"):
-                    probability = float(raw_prediction.numpy().flatten()[0])
-                else:
-                    probability = float(raw_prediction.flatten()[0])
-            else:
-                probability = float(prediction)
-
-            results[name] = {
-                "prediction": int(prediction),
-                "will_cancel": bool(prediction == 1),
-                "probability": float(probability)
-            }
+            df = _align(model, raw)
+            p = _proba(model, df)
+            out[name] = {"probability": p, "prediction": int(p >= threshold)}
         except Exception as e:
-            results[name] = {"error": str(e)}
-            print(f"Error en modelo {name}: {str(e)}")
+            out[name] = {"error": str(e)}
+    return out
 
-    return results
+@app.get("/models")
+def get_models() -> Dict[str, str]:
+    """Lista los modelos disponibles."""
+    return {name: str(path) for name, path in MODEL_MAP.items() if path.exists()}
 
+
+@app.post("/predict/{model_name}")
+def predict(
+    model_name: str,
+    data: BookingData,
+    threshold: float = Query(0.5, ge=0.0, le=1.0, description="Umbral de decisión"),
+) -> Dict[str, Any]:
+    if model_name not in models:
+        raise HTTPException(404, f"Modelo '{model_name}' no encontrado.")
+
+    model = models[model_name]
+    raw = pd.DataFrame([data.model_dump()])
+    df = _align(model, raw)
+
+    try:
+        probability = _proba(model, df)
+        prediction = int(probability >= threshold)
+        return {"probability": probability, "prediction": prediction}
+    except Exception as e:
+        raise HTTPException(500, f"Error al predecir: {str(e)}")
